@@ -10,9 +10,9 @@ import MovieCard from './MovieCard';
 const App = ()=>{
 const [movies, setMovies]= useState([]);
 const [searchTerm, setSearchTerm] = useState('');
-
+const API_URL = 'http://www.omdbapi.com?apikey=23b2035f'
 const searchMovies = async(title)=>{
-const response = await fetch(`${process.env.API_URL}&s=${title}`);
+const response = await fetch(`${API_URL}&s=${title}`);
 const data = await response.json();
   console.log(data.Search);
     setMovies(data.Search);
